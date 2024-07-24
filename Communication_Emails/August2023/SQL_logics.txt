@@ -1,0 +1,83 @@
+
+SELECT  count(*) as CNT
+FROM  [ADV].[Advantage_XSB_Analyzed_Current]
+where TAA_Discrepancy = 1
+
+
+SELECT  count(*) as CNT
+FROM  [ADV].[Advantage_XSB_Analyzed_Archive]
+where TAA_Discrepancy = 1
+and DataFileKey in (SELECT DataFileKey FROM [PPL].[ADV].[DataFiles] where ReportingDate = '2023-05-30')
+
+
+
+with nowx AS (
+
+SELECT  contractNumber, vendorName, count(*) as CNT
+FROM  [ADV].[Advantage_XSB_Analyzed_Current]
+where TAA_Discrepancy = 1
+GROUP BY contractNumber, vendorName
+--ORDER BY CNT DESC
+),
+
+
+before as (
+
+SELECT  contractNumber, vendorName, count(*) as CNT
+FROM  [ADV].[Advantage_XSB_Analyzed_Archive]
+where TAA_Discrepancy = 1
+and DataFileKey in (SELECT DataFileKey FROM [PPL].[ADV].[DataFiles] where ReportingDate = '2023-05-30')
+GROUP BY contractNumber, vendorName
+--ORDER BY CNT DESC
+)
+
+
+SELECT t1.contractNumber, t1.vendorName, t1.CNT, t2.CNT, (t1.CNT - t2.CNT) AS delta
+FROM nowx as t1
+LEFT JOIN before as t2
+ON t1.contractNumber = t2.contractNumber
+ORDER BY delta DESC
+
+
+SELECT TOP(5)  standardizedManufacturerName, count(*) as CNT
+FROM  [ADV].[Advantage_XSB_Analyzed_Current]
+where TAA_Discrepancy = 1
+GROUP BY standardizedManufacturerName
+ORDER BY CNT DESC
+
+
+SELECT top(5)  contractNumber, vendorName, standardizedManufacturerName, count(*) as CNT
+FROM  [ADV].[Advantage_XSB_Analyzed_Current]
+where TAA_Discrepancy = 1
+and contractNumber = 'GS-35F-0489Y'
+GROUP BY contractNumber, vendorName, standardizedManufacturerName
+ORDER BY CNT DESC
+
+
+SELECT TOP(5)  contractNumber, vendorName, standardizedManufacturerName, count(*) as CNT
+FROM  [ADV].[Advantage_XSB_Analyzed_Current]
+where TAA_Discrepancy = 1
+and contractNumber = '47QTCA18D00AZ'
+GROUP BY contractNumber, vendorName, standardizedManufacturerName
+ORDER BY CNT DESC
+
+SELECT TOP(5)  contractNumber, vendorName, standardizedManufacturerName, count(*) as CNT
+FROM  [ADV].[Advantage_XSB_Analyzed_Current]
+where TAA_Discrepancy = 1
+and contractNumber = '47QTCA19D001S'
+GROUP BY contractNumber, vendorName, standardizedManufacturerName
+ORDER BY CNT DESC
+
+SELECT TOP(5)  contractNumber, vendorName, standardizedManufacturerName, count(*) as CNT
+FROM  [ADV].[Advantage_XSB_Analyzed_Current]
+where TAA_Discrepancy = 1
+and contractNumber = '47QSWA18D008F'
+GROUP BY contractNumber, vendorName, standardizedManufacturerName
+ORDER BY CNT DESC
+
+SELECT TOP(5)  contractNumber, vendorName, standardizedManufacturerName, count(*) as CNT
+FROM  [ADV].[Advantage_XSB_Analyzed_Current]
+where TAA_Discrepancy = 1
+and contractNumber = 'GS-35F-0119Y'
+GROUP BY contractNumber, vendorName, standardizedManufacturerName
+ORDER BY CNT DESC

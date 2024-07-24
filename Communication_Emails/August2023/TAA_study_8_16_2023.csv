@@ -1,0 +1,29 @@
+﻿,,,,,,,,,,,,,,,
+, Condition ,,,standardizedManufacturerName,,,,,,ManufacturerName,,,,,
+,TAA_Discrepancy = 1,where prohibitionReason LIKE '%Non-TAA%',Difference,Largest Contributor ,Count,Percent,2nd largest contributor,Count,Percent,Largest Contributor ,Count,Percent,2nd largest contributor,Count,Percent
+8/16/2023,"222,792","227,810","5,018",C2G,1907,38%,Hewlett Packard Enterprise Company,611,12%,C2G,1156,23%,LEGRAND,458,9%
+5/30/2023,"203,157","208,736","5,579",C2G,2084,37%,"Ricoh Imaging Company, Ltd.",280,5%,C2G,1541,27%,LEGRAND,289,5%
+4/17/2023,"208,194","212,278","4,084",C2G,1482,34%,Legrand Group,339,8%,C2G,1180,27%,LEGRAND,238,5%
+2/3/2023,"200,921","206,084","5,163",C2G,1644,32%,Legrand Group,384,7%,C2G,1413,27%,RICOH,288,6%
+12/7/2022,"127,681","128,897","1,216",VERBATIM CORPORATION,271,22%,RICOH CORP.,147,12%,VERBATIM,215,17%,VERBATIM CORPORATION,154,12%
+10/10/2022,"224,585","226,866","2,281",Plantronics,497,21%,VERBATIM CORPORATION,285,12%,PLANTRONICS,396,17%,VERBATIM,253,11%
+8/26/2022,"103,070","106,751","3,681",C2G,10543,10%,StarTech.com,10387,10%,TRIPP LITE,9229,9%,LEXMARK,8891,8%
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
